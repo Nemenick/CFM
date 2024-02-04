@@ -10,34 +10,17 @@ The networks have been developed with python 3.8 and tensorflow version 2.9.1
 
 
 
-
-## 1.  Install [miniconda](https://docs.conda.io/en/latest/miniconda.html) and requirements
-- Download PhaseNet repository
-```bash
-git clone https://github.com/wayneweiqiang/PhaseNet.git
-cd PhaseNet
-```
-- Install to default environment
+To use the network:
+## 1. Set up the environment:
+- Install [miniconda](https://docs.conda.io/en/latest/miniconda.html)
+- Install the "CFMenvironment" virtual envirionment
 ```bash
 conda env update -f=env.yml -n base
-```
-- Install to "phasenet" virtual envirionment
-```bash
 conda env create -f env.yml
 conda activate phasenet
 ```
 
-## 2. Pre-trained model
-Located in directory: **model/190703-214543**
-
-## 3. Related papers
-- Zhu, Weiqiang, and Gregory C. Beroza. "PhaseNet: A Deep-Neural-Network-Based Seismic Arrival Time Picking Method." arXiv preprint arXiv:1803.03211 (2018).
-- Liu, Min, et al. "Rapid characterization of the July 2019 Ridgecrest, California, earthquake sequence from raw seismic data using machine‐learning phase picker." Geophysical Research Letters 47.4 (2020): e2019GL086189.
-- Park, Yongsoo, et al. "Machine‐learning‐based analysis of the Guy‐Greenbrier, Arkansas earthquakes: A tale of two sequences." Geophysical Research Letters 47.6 (2020): e2020GL087032.
-- Chai, Chengping, et al. "Using a deep neural network and transfer learning to bridge scales for seismic phase picking." Geophysical Research Letters 47.16 (2020): e2020GL088651.
-- Tan, Yen Joe, et al. "Machine‐Learning‐Based High‐Resolution Earthquake Catalog Reveals How Complex Fault Structures Were Activated during the 2016–2017 Central Italy Sequence." The Seismic Record 1.1 (2021): 11-19.
-
-## 4. Batch prediction
+## 2. Start to predict the polarities:
 See examples in the [notebook](https://github.com/wayneweiqiang/PhaseNet/blob/master/docs/example_batch_prediction.ipynb): [example_batch_prediction.ipynb](example_batch_prediction.ipynb)
 
 
@@ -77,9 +60,6 @@ python phasenet/predict.py --model=model/190703-214543 --data_list=test_data/mse
 
 Notes: 
 
-1. The reason for using "--batch_size=1" is because the mseed or sac files usually are not the same length. If you want to use a larger batch size for a good prediction speed, you need to cut the data to the same length.
-
-2. Remove the "--plot_figure" argument for large datasets, because plotting can be very slow.
 
 Optional arguments:
 ```
@@ -120,33 +100,3 @@ optional arguments:
   --plot_figure         If plot figure for test
   --save_prob           If save result for test
 ```
-
-- The output picks are saved to "results/picks.csv" on default
-
-|file_name        |begin_time             |station_id|phase_index|phase_time             |phase_score|phase_amp             |phase_type|
-|-----------------|-----------------------|----------|-----------|-----------------------|-----------|----------------------|----------|
-|2020-10-01T00:00*|2020-10-01T00:00:00.003|CI.BOM..HH|14734      |2020-10-01T00:02:27.343|0.708      |2.4998866231208325e-14|P         |
-|2020-10-01T00:00*|2020-10-01T00:00:00.003|CI.BOM..HH|15487      |2020-10-01T00:02:34.873|0.416      |2.4998866231208325e-14|S         |
-|2020-10-01T00:00*|2020-10-01T00:00:00.003|CI.COA..HH|319        |2020-10-01T00:00:03.193|0.762      |3.708662269972206e-14 |P         |
-
-Notes:
-1. The *phase_index* means which data point is the pick in the original sequence. So *phase_time* = *begin_time* + *phase_index* / *sampling rate*. The default *sampling_rate* is 100Hz 
-
-
-## 5. QuakeFlow example
-A complete earthquake detection workflow can be found in the [QuakeFlow](https://wayneweiqiang.github.io/QuakeFlow/) project.
-
-## 6. Interactive example
-See details in the [notebook](https://github.com/wayneweiqiang/PhaseNet/blob/master/docs/example_gradio.ipynb): [example_interactive.ipynb](example_gradio.ipynb)
-
-## 7. Training
-- Download a small sample dataset:
-```bash
-wget https://github.com/wayneweiqiang/PhaseNet/releases/download/test_data/test_data.zip
-unzip test_data.zip
-```
-- Start training from the pre-trained model
-```
-python phasenet/train.py  --model_dir=model/190703-214543/ --train_dir=test_data/npz --train_list=test_data/npz.csv  --plot_figure --epochs=10 --batch_size=10
-```
-- Check results in the **log** folder
