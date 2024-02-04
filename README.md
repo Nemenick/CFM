@@ -33,7 +33,7 @@ python predict.py --model=folder_model/CFM.hdf5 --data=folder_data/*.sac --forma
 
 
 Notes: 
-The built-in script currently supports the data formats: mseed, sac. If you need to....
+The built-in script currently supports the data formats: mseed, sac. If you need to....<br>
 (define csv of arrivals how to be used)
 
 Arguments:
