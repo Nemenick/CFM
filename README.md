@@ -9,7 +9,7 @@ The folder 'Network_CFM' contains the networks we trained (CFM and CFM_with_time
 The networks have been developed with python 3.8 and tensorflow version 2.9.1
 
 
-The file "CFM_env.yml" can be used to reproduce the environment needed to utilize the network with the scritp provided
+The file 'CFM_env.yml' can be used to reproduce the environment needed to utilize the network with the scritp provided ('predict.py')
 
 
 To use the network:
@@ -30,7 +30,7 @@ conda env create -f path../Prova.yml
 conda activate CFMenvironment
 ```
 
-- Launch the script:
+- Download and Launch the script 'predict.py':
 ```
 python predict.py --model=folder_model/CFM.hdf5 --data=folder_data/*.sac --format=sac --arrivals=folder_arrivals/csvfile.csv --batch_size=1 --demean=false --normalize=true --results_dir=/home/user/Desktop/...
 ```
