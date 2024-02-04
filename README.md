@@ -34,7 +34,7 @@ python predict.py --model=folder_model/CFM.hdf5 --data=folder_data/*.sac --forma
 Notes: 
 
 
-Optional arguments:
+Arguments:
 ```
 usage: predict.py [-h] [--model MODEL] [--data DATA] [--format FORMAT] [--arrivals ARRIVALS]
                   [--batch_size BATCH_SIZE][--demean DEMEAN] [--normalize NORMALIZE]
