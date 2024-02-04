@@ -22,7 +22,7 @@ conda activate phasenet
 
 ## 2. Start to predict the polarities:
 
-The built-in script currently supports the data formats: mseed, sac. If you need to 
+The built-in script currently supports the data formats: mseed, sac. If you need to....
 
 
 - Example of usage:
@@ -32,7 +32,7 @@ python predict.py --model=folder_model/CFM.hdf5 --data=folder_data/*.sac --forma
 
 
 Notes: 
-
+(define csv of arrivals how to be used)
 
 Arguments:
 ```
