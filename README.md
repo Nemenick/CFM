@@ -15,23 +15,25 @@ To use the network:
 - Install [miniconda](https://docs.conda.io/en/latest/miniconda.html)
 - Install the "CFMenvironment" virtual envirionment
 ```bash
-conda env update -f=env.yml -n base
-conda env create -f env.yml
-conda activate phasenet
+conda update -n base -c defaults conda
+conda config --append channels conda-forge
+conda env create -f path../Prova.yml
 ```
 
 ## 2. Start to predict the polarities:
+- Activate the environment:
+```bash
+conda activate CFMenvironment
+```
 
-The built-in script currently supports the data formats: mseed, sac. If you need to....
-
-
-- Example of usage:
+- Launch the script:
 ```
 python predict.py --model=folder_model/CFM.hdf5 --data=folder_data/*.sac --format=sac --arrivals=folder_arrivals/csvfile.csv --batch_size=1 --demean=false --normalize=true --results_dir=/home/user/Desktop/...
 ```
 
 
 Notes: 
+The built-in script currently supports the data formats: mseed, sac. If you need to....
 (define csv of arrivals how to be used)
 
 Arguments:
