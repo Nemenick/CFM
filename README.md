@@ -15,7 +15,7 @@ To this end:
 ## 1. Set up the environment:
 - Install [miniconda](https://docs.conda.io/en/latest/miniconda.html)
 - Download the "CFM_env.yml" file
-- Install the "CFMenvironment" virtual envirionment
+- Install the "CFMenvironment" virtual envirionment:
 ```bash
 conda update -n base -c defaults conda
 conda config --append channels conda-forge
