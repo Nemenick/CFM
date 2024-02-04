@@ -27,7 +27,7 @@ The built-in script currently supports the data formats: mseed, sac. If you need
 
 - Example of usage:
 ```
-python /predict.py --model=model/190703-214543 --data_list=test_data/mseed.csv --data_dir=test_data/mseed --format=mseed --amplitude --response_xml=test_data/stations.xml --batch_size=1 --sampling_rate=100 --plot_figure
+python predict.py --model=folder_model/CFM.hdf5 --data=folder_data/*.sac --format=sac --arrivals=folder_arrivals/csvfile.csv --batch_size=1 --demean=false --normalize=true --results_dir=/home/user/Desktop/...
 ```
 
 
