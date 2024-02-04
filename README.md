@@ -15,8 +15,8 @@ The file "CFM_env.yml" can be used to reproduce the environment needed to utiliz
 To use the network:
 
 ## 1. Set up the environment:
-- Download the "CFM_env.yml" file
 - Install [miniconda](https://docs.conda.io/en/latest/miniconda.html)
+- Download the "CFM_env.yml" file
 - Install the "CFMenvironment" virtual envirionment
 ```bash
 conda update -n base -c defaults conda
