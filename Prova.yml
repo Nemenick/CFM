@@ -1,0 +1,19 @@
+# This file may be used to create an environment using:
+# $ conda create --name <env> --file <this file>
+name: CFMenvironment
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python
+  - numpy
+  - scipy
+  - matplotlib
+  - pandas
+  - scikit-learn
+  - tqdm
+  - obspy
+  - uvicorn
+  - fastapi
+  - tensorflow
+  - keras
