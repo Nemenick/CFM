@@ -9,7 +9,7 @@ The folder 'Network_CFM' contains the networks we trained (CFM and CFM_with_time
 The networks have been developed with python 3.8 and tensorflow version 2.9.1
 
 
-If you need, the file 'CFM_env.yml' can be used to reproduce the environment needed to utilize the network with the scritp provided ('predict.py')<br>
+If needed, the file 'CFM_env.yml' can be used to recreate the environment required for utilizing the network with the provided scritp ('predict.py')<br>
 To this end:
 
 ## 1. Set up the environment:
