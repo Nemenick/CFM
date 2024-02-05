@@ -35,8 +35,8 @@ python predict.py --model=folder_model/CFM.hdf5 --data=folder_data/*.sac --forma
 
 
 Notes: <br>
-The built-in script currently supports the data formats: mseed, sac. If you need to....<br>
-(define csv of arrivals how to be used)
+The built-in script ('predict.py') currently supports the input-data formats: mseed, sac. The network and data can be loaded through a custom script, with the data provided as a NumPy array.<br>
+The 'arrivals' optional argument should contain the path to the .csv file where information about the arrival times is stored. If the arrival time information of a trace is also stored in the SAC trace, this information is used, neglecting the info in the .csv file of arrivals.
 
 Arguments:
 ```
