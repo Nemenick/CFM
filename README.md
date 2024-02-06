@@ -19,7 +19,7 @@ To this end:
 ```bash
 conda update -n base -c defaults conda
 conda config --append channels conda-forge
-conda env create -f path../Prova.yml
+conda env create -f path../CFM_env.yml
 ```
 
 ## 2. Start to predict the polarities:
