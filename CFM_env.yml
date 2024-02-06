@@ -5,7 +5,8 @@ channels:
   - defaults
   - conda-forge
 dependencies:
-  - python
+  - tensorflow=2.9.1
+  - python=3.8
   - numpy
   - scipy
   - matplotlib
@@ -15,5 +16,4 @@ dependencies:
   - obspy
   - uvicorn
   - fastapi
-  - tensorflow
   - keras
