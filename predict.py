@@ -40,9 +40,8 @@ def read_mseed(fname, csv_arrivals={}):
     for trace in stream:
         arrival = -10
         # try to find a valid arrival time
-        if "a" in trace.stats.mseed.keys():
-            arrival = int(trace.stats.mseed["a"]*trace.stats.sampling_rate)
-        elif "trace_P_arrival_sample" in csv_arrivals.keys():
+        
+        if "trace_P_arrival_sample" in csv_arrivals.keys():
             if len(csv_arrivals[csv_arrivals["trace_id"]==trace.id])>1:
                 ids_not_predictable.append(trace.id)
                 error_not_predictable.append("Two or more arrival found for the trace with this id!")
