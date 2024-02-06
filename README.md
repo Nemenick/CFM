@@ -6,6 +6,8 @@ The waveforms are centered on P-phase arrivals, demeaned, and normalized, as exp
 
 The folder 'Network_CFM' contains the networks we trained (CFM and CFM_with_timeshift in two .hdf5 files), along with plots illustrating their respective accuracies and losses. Note: the training accuracy of the network with timeshift is lower due to the random shift applied to the training waveforms.
 
+The folder 'Test_data' contains some example waveforms along with a csv file where some arrivals are stored.
+
 The networks have been developed with python 3.8 and tensorflow version 2.9.1
 
 
@@ -36,7 +38,8 @@ python predict.py --model=folder_model/CFM.hdf5 --data=folder_data/*.sac --forma
 
 Notes: <br>
 The built-in script ('predict.py') currently supports the input-data formats: mseed, sac. The network and data can be loaded through a custom script, with the data provided as a NumPy array.<br>
-The 'arrivals' optional argument should contain the path to the .csv file where information about the arrival times is stored. If the arrival time information of a trace is also stored in the SAC trace, this information is used, neglecting the info in the .csv file of arrivals.
+The 'arrivals' optional argument should contain the path to the .csv file where information about the arrival times is stored. If the arrival time information of a trace is also stored in the SAC trace, this information is used, neglecting the info in the .csv file of arrivals.<br>
+The traces contained in .mseed or .sac files should contain ONLY the vertical component.
 
 Arguments:
 ```
