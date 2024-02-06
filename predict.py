@@ -8,13 +8,6 @@ import os
 from datetime import datetime
 
 
-"""
-RIVEDI:
-    read_mseed:
-        - key "a"-> how to save arrival in MSEED file?
-        - key "b"-> how to save reference time in MSEED file?
-"""
-
 def read_mseed(fname, csv_arrivals={}):
     sampling_rate=100
     try:
