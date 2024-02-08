@@ -17,7 +17,7 @@ To this end:
 ## 1. Set up the environment:
 - Install [miniconda](https://docs.conda.io/en/latest/miniconda.html)
 - Download the "CFM_env.yml" file
-- Install the "CFMenvironment" virtual envirionment:
+- Install the "CFMenvironment" virtual envirionment (on command prompt):
 ```bash
 conda update -n base -c defaults conda
 conda config --append channels conda-forge
@@ -25,12 +25,12 @@ conda env create -f path../CFM_env.yml
 ```
 
 ## 2. Start to predict the polarities:
-- Activate the environment:
+- Activate the environment (on command prompt):
 ```bash
 conda activate CFMenvironment
 ```
 
-- Download and Launch the script 'predict.py':
+- Download and Launch the script 'predict.py' (on command prompt):
 ```
 python predict.py --model=folder_model/CFM.hdf5 --data=folder_data/*.sac --format=sac --arrivals=folder_arrivals/csvfile.csv --batch_size=1 --demean=false --normalize=true --results_dir=/home/user/Desktop/...
 ```
