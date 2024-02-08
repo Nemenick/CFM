@@ -203,7 +203,28 @@ else:
 # data          --> np.array of shape (n_traces, 160)
 # pd_pred       --> pd dataframe, contains id of predictable waveforms with their respective arrival considered and predictions
 # pd_not_pred   --> pd dataframe, contains id of not_predictable waveforms with the motivation
-    
+
+# Get the current date and time to create the folder where to store the outcomes.
+current_time = str(datetime.now())
+current_time = current_time.replace("-","_").replace(" ","_").replace(":","_").replace(".","_")
+try:
+    os.mkdir(f"{args.results_dir}/results_{current_time}")
+    path = f"{args.results_dir}/results_{current_time}"
+except:
+    if args.results_dir is not None:
+        print(f"The path provided ('{args.results_dir}') is not a valid path to store the results. Creating a folder in the current path")
+    else:
+        print(f"No path to store the results provided. Creating a folder in the current path")
+    os.mkdir(f"results_{current_time}")
+    path = f"results_{current_time}"
+
+
+if len(data)<1:
+    print("Number of predictable traces equal to 0. Exit")
+    pd_pred.to_csv(f"{path}/waveforms_predicted.csv",index=False)
+    pd_not_pred.to_csv(f"{path}/waveforms_not_predicted.csv",index=False)
+    exit()
+
 if args.demean.lower() == "true":
     data = demean(data)
 else:
@@ -218,20 +239,6 @@ y = model.predict(data[:,semi_amp-80:semi_amp+80], batch_size=args.batch_size)
 y.reshape(max(y.shape))
 
 pd_pred["prediction"] = y
-
-# Get the current date and time.
-current_time = str(datetime.now())
-current_time = current_time.replace("-","_").replace(" ","_").replace(":","_").replace(".","_")
-try:
-    os.mkdir(f"{args.results_dir}/results_{current_time}")
-    path = f"{args.results_dir}/results_{current_time}"
-except:
-    if args.results_dir is not None:
-        print(f"The path provided ('{args.results_dir}') is not a valid path to store the results. Creating a folder in the current path")
-    else:
-        print(f"No path to store the results provided. Creating a folder in the current path")
-    os.mkdir(f"results_{current_time}")
-    path = f"results_{current_time}"
 
 pd_pred.to_csv(f"{path}/waveforms_predicted.csv",index=False)
 pd_not_pred.to_csv(f"{path}/waveforms_not_predicted.csv",index=False)
