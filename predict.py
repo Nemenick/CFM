@@ -31,9 +31,14 @@ def read_mseed(fname, csv_arrivals={}):
     
     i = 0
     for trace in stream:
+    
+        if trace.id[-1].upper() != "Z":
+            ids_not_predictable.append(trace.id)
+            error_not_predictable.append("CFM only works on vertical component. This is not a vertical component!")
+            continue
+        
         arrival = -10
         # try to find a valid arrival time
-        
         if "trace_P_arrival_sample" in csv_arrivals.keys():
             if len(csv_arrivals[csv_arrivals["trace_id"]==trace.id])>1:
                 ids_not_predictable.append(trace.id)
@@ -48,6 +53,7 @@ def read_mseed(fname, csv_arrivals={}):
                 continue
             if len(csv_arrivals[csv_arrivals["trace_id"]==trace.id])==1:
                 arrival = int((UTCDateTime(csv_arrivals[csv_arrivals["trace_id"]==trace.id]["trace_P_arrival_time"].iloc[0])-trace.stats.starttime) * trace.stats.sampling_rate)
+                
         if arrival < 0:
             ids_not_predictable.append(trace.id)
             error_not_predictable.append("Unable to find a valid P arrival")
@@ -98,6 +104,12 @@ def read_sac(fname, csv_arrivals={}):
     arrivals = []
     i = 0
     for trace in stream:
+
+        if trace.id[-1].upper() != "Z":
+            ids_not_predictable.append(trace.id)
+            error_not_predictable.append("CFM only works on vertical component. This is not a vertical component!")
+            continue
+
         arrival = -10
         # try to find a valid arrival time
         if "a" in trace.stats.sac.keys():
@@ -167,7 +179,7 @@ parser.add_argument("--model", type=str, help="REQUIRED: Path of the model used 
 parser.add_argument("--data", type=str, help="REQUIRED: Path of the input data. Can accept wildcards for sac or mseed formats")
 parser.add_argument("--format", type=str, help="REQUIRED: input data file format. Accepted values are 'sac' or 'mseed'")
 parser.add_argument("--arrivals", type=str, default={}, help=harrival)
-parser.add_argument("--batch_size", type=int, default=1, help="Optional: batch size (default=1)")
+parser.add_argument("--batch_size", type=int, default=16, help="Optional: batch size (default=1)")
 parser.add_argument("--demean", type=str, default="true", help="Optional: if 'true', data will be demeaned. Any other value is interpreted as 'false'. RECOMANDED TO DEMEAN (default='true')")
 parser.add_argument("--normalize", type=str, default="true", help="Optional: if 'true', data will be cut and normalized. Any other value is interpreted as 'false'. RECOMANDED TO NORMALIZE (default='true')")
 parser.add_argument("--results_dir", type=str, default=None, help="Optional: Folder where to store the results. If not provided, a folder in the current path is created")
