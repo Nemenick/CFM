@@ -1,5 +1,5 @@
 # CFM
-Repository related to the paper "CFM: a convolutional neural network for first-motion polarity classification of seismic records in volcanic and tectonic areas".
+Repository related to the paper "CFM: a convolutional neural network for first-motion polarity classification of seismic records in volcanic and tectonic areas". For any question gmessuti@unisa.it
 
 The folder 'dataset B test set (Mt. Pollino area)' contains two files. The first file contains the vertical components of the seismic waveforms used (hdf5 file), and the second file contains the metadata related to the specific waveform (csv).
 The waveforms are centered on P-phase arrivals, demeaned, and normalized, as explained in the paper.
@@ -68,5 +68,3 @@ options:
                         Optional: Folder where to store the results. If not provided, a folder in the current path is
                         created
 ```
-
-For any question gmessuti@unisa.it
