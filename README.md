@@ -68,3 +68,5 @@ options:
                         Optional: Folder where to store the results. If not provided, a folder in the current path is
                         created
 ```
+
+For any question gmessuti@unisa.it
