@@ -32,7 +32,7 @@ conda activate CFMenvironment
 
 - Download and Launch the script 'predict.py' (on command prompt):
 ```
-python predict.py --model=folder_model/CFM.hdf5 --data=folder_data/*.sac --format=sac --arrivals=folder_arrivals/csvfile.csv --batch_size=1 --demean=false --normalize=true --results_dir=/home/user/Desktop/...
+python predict.py --model=folder_model/CFM_with_timeshift.hdf5 --data=folder_data/*.sac --format=sac --arrivals=folder_arrivals/csvfile.csv --batch_size=1 --demean=false --normalize=true --results_dir=/home/user/Desktop/...
 ```
 
 
