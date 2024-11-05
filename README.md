@@ -40,7 +40,7 @@ Notes: <br>
 - The built-in script ('predict.py') currently supports the input-data formats: mseed, sac. The network and the data (of any custom format) can be also loaded through a custom script, with the data provided as a NumPy array.<br>
 - The 'arrivals' optional argument should contain the path to the .csv file where information about the arrival times is stored. If the arrival time information of a trace is also stored in the SAC trace, this information is used, neglecting the info in the .csv file of arrivals.<br>
 - We recall the network can operate only on the vertical component.
-- The output of the predict script comprises two CSV files. One contains the IDs of waveforms that are deemed "not predictable" for certain reasons, while the other represents the predictions. Each trace ID is associated with a predicted value indicating upward polarity probability. To determine the acceptance of upward or downward polarity, a threshold needs to be set. For instance, our [related work](https://arxiv.org/pdf/2410.06120)  suggests that for our dataset, a reasonable choice would be to accept upward polarities for outputs above 0.925 and downward polarities for outputs below 0.075, as 90% of the polarities fall within this range.
+- The output of the predict script comprises two CSV files. One contains the IDs of waveforms that are deemed "not predictable" for certain reasons, while the other represents the predictions. Each trace ID is associated with a predicted value indicating upward polarity probability. To determine the acceptance of upward or downward polarity, a threshold needs to be set. We recommend accepting upward polarities for outputs above 0.925 and downward polarities for outputs below 0.075.
 
 Arguments:
 ```
