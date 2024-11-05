@@ -4,7 +4,7 @@ Repository related to the paper "CFM: a convolutional neural network for first-m
 The folder 'dataset B test set (Mt. Pollino area)' contains two files. The first file contains the vertical components of the seismic waveforms used (hdf5 file), and the second file contains the metadata related to the specific waveform (csv).
 The waveforms are centered on P-phase arrivals, demeaned, and normalized, as explained in the paper.
 
-The folder 'Network_CFM' contains the networks we trained (CFM and CFM_with_timeshift in two .hdf5 files), along with plots illustrating their respective accuracies and losses. Note: the training accuracy of the network with timeshift is lower due to the random shift applied to the training waveforms.
+The folder 'Network_CFM' contains the networks we trained (CFM and CFM_with_timeshift in two .hdf5 files), along with plots illustrating their respective accuracies and losses. Note: the training accuracy of the network with timeshift is lower due to the random shift applied to the training waveforms. Note: Despite the slightly lower accuracy, we suggest using the 'CFM_with_timeshift.hdf5' network, as it is more robust to minor inaccuracies in pickings.
 
 The folder 'Test_data' contains some example waveforms along with a csv file where some arrivals are stored.
 
