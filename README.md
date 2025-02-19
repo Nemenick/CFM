@@ -11,13 +11,13 @@ The folder 'Test_data' contains some example waveforms along with a csv file whe
 The networks have been developed with python 3.8 and tensorflow version 2.9.1
 
 
-If needed, the file 'CFM_env.yml' can be used to recreate the environment required for utilizing the network with the provided scritp ('predict.py')<br>
+If needed, the file 'CFM_env.yml' can be used to recreate the environment required for utilizing the network with the provided script ('predict.py')<br>
 To this end:
 
 ## 1. Set up the environment:
 - Install [miniconda](https://docs.conda.io/en/latest/miniconda.html)
 - Download the "CFM_env.yml" file
-- Install the "CFMenvironment" virtual envirionment (on command prompt):
+- Install the "CFMenvironment" virtual environment (on command prompt):
 ```bash
 conda update -n base -c defaults conda
 conda config --append channels conda-forge
@@ -36,7 +36,7 @@ python predict.py --model=folder_model/CFM_with_timeshift.hdf5 --data=folder_dat
 ```
 
 
-Notes: <br>
+Important Notes: <br>
 - The built-in script ('predict.py') currently supports the input-data formats: mseed, sac. The network and the data (of any custom format) can be also loaded through a custom script, with the data provided as a NumPy array.<br>
 - The 'arrivals' optional argument should contain the path to the .csv file where information about the arrival times is stored. If the arrival time information of a trace is also stored in the SAC trace, this information is used, neglecting the info in the .csv file of arrivals.<br>
 - We recall the network can operate only on the vertical component.
@@ -55,15 +55,15 @@ options:
   --format FORMAT       REQUIRED: input data file format. Accepted values are 'sac' or 'mseed'
   --arrivals ARRIVALS   Optional: CSV file where P-wave arrivals are specified. The structure must be as follows:
                         trace_id, trace_P_arrival_sample (int), trace_P_arrival_time (UTCDateTime). Only one of the
-                        two column, either '...arrival_sample' or '...arrival_time', is required. If both are
+                        two columns, either '...arrival_sample' or '...arrival_time', is required. If both are
                         provided, arrival_sample will be considered.
   --batch_size BATCH_SIZE
                         Optional: batch size (default=1)
   --demean DEMEAN       Optional: if 'true', data will be demeaned. Any other value is interpreted as 'false'.
-                        RECOMANDED TO DEMEAN (default='true')
+                        RECOMMENDED TO DEMEAN (default='true')
   --normalize NORMALIZE
                         Optional: if 'true', data will be cut and normalized. Any other value is interpreted as
-                        'false'. RECOMANDED TO NORMALIZE (default='true')
+                        'false'. RECOMMENDED TO NORMALIZE (default='true')
   --results_dir RESULTS_DIR
                         Optional: Folder where to store the results. If not provided, a folder in the current path is
                         created
