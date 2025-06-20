@@ -1,5 +1,5 @@
 # CFM
-Repository related to the paper "CFM: a convolutional neural network for first-motion polarity classification of seismic records in volcanic and tectonic areas" and subsequent studies [[1]](#1),[[2]](#2). For any questions, gmessuti@unisa.it, oamoroso@unisa.it, sscarpetta@unisa.it.
+Repository related to the paper "CFM: a convolutional neural network for first-motion polarity classification of seismic records in volcanic and tectonic areas" [[1]](#1) and subsequent studies [[2]](#2),[[3]](#3). For any questions, gmessuti@unisa.it, oamoroso@unisa.it, sscarpetta@unisa.it.
 
 The folder 'dataset B test set (Mt. Pollino area)' contains two files. The first file contains the vertical components of the seismic waveforms used (hdf5 file), and the second file contains the metadata related to the specific waveform (csv).
 The waveforms are centered on P-phase arrivals, demeaned, and normalized, as explained in the paper.
@@ -8,7 +8,7 @@ The folder 'Network_CFM' contains the networks we trained (CFM and CFM_with_time
 
 The folder 'Test_data' contains some example waveforms along with a csv file where some arrivals are stored.
 
-The folder 'CFM_ensemble' contains eight independent CFM models trained with timeshift, useful to build an ensemble approach, as suggested in [[1]](#1), [[2]](#2).
+The folder 'CFM_ensemble' contains eight independent CFM models trained with timeshift, useful to build an ensemble approach, as suggested in [[2]](#2), [[3]](#3).
 
 All the networks have been developed with Python 3.8 and TensorFlow version 2.9.1
 
@@ -76,12 +76,19 @@ options:
 
 ## References
 <a id="1">[1]</a> 
+Messuti, G., Scarpetta, S., Amoroso, O., Napolitano, F., Falanga, M., & Capuano, P. (2023).
+CFM: a convolutional neural network for first-motion polarity classification of seismic records in volcanic and tectonic areas.
+Frontiers in Earth Science, 11, 1223686.
+DOI: 10.3389/feart.2023.1223686
+
+<a id="2">[2]</a> 
 Messuti, G.
 P-wave polarity determination via ensemble deep learning models.
 In Nuovo Cimento della Societa Italiana di Fisica C (2024) 47, 5
 DOI: 10.1393/ncc/i2024-24265-x
 
-<a id="2">[2]</a> 
+<a id="3">[3]</a> 
 Messuti, G., Amoroso, O., Napolitano, F., Falanga, M., Capuano, P., & Scarpetta, S. (2025). 
 Uncertainty estimation via ensembles of deep learning models and dropout layers for seismic traces. 
 In Advanced Neural Artificial Intelligence: Theories and Applications (pp. 107-117). Springer, Singapore.
+DOI: 10.1007/978-981-96-0994-9_10
