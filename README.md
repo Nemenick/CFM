@@ -8,7 +8,7 @@ The folder 'Network_CFM' contains the networks we trained (CFM and CFM_with_time
 
 The folder 'Test_data' contains some example waveforms along with a csv file where some arrivals are stored.
 
-The folder 'CFM_ensemble' contains eight independent CFM models trained with timeshift, useful to build an ensemble approach, as suggested in [[1]](#1)
+The folder 'CFM_ensemble' contains eight independent CFM models trained with timeshift, useful to build an ensemble approach, as suggested in [[1,2]](#1)(#2)
 
 All the networks have been developed with Python 3.8 and TensorFlow version 2.9.1
 
@@ -71,8 +71,16 @@ options:
                         created
 ```
 
+ 
+
 ## References
 <a id="1">[1]</a> 
-Dijkstra, E. W. (1968). 
-Go to statement considered harmful. 
-Communications of the ACM, 11(3), 147-148.
+Messuti, G.
+P-wave polarity determination via ensemble deep learning models.
+In Nuovo Cimento della Societa Italiana di Fisica C (2024) 47, 5
+DOI: 10.1393/ncc/i2024-24265-x
+
+<a id="2">[2]</a> 
+Messuti, G., Amoroso, O., Napolitano, F., Falanga, M., Capuano, P., & Scarpetta, S. (2025). 
+Uncertainty estimation via ensembles of deep learning models and dropout layers for seismic traces. 
+In Advanced Neural Artificial Intelligence: Theories and Applications (pp. 107-117). Springer, Singapore.
