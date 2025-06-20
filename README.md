@@ -1,5 +1,5 @@
 # CFM
-Repository related to the paper "CFM: a convolutional neural network for first-motion polarity classification of seismic records in volcanic and tectonic areas". For any questions gmessuti@unisa.it, oamoroso@unisa.it, sscarpetta@unisa.it.
+Repository related to the paper "CFM: a convolutional neural network for first-motion polarity classification of seismic records in volcanic and tectonic areas" and subsequest studyes ( [Uncertainty](https://www.researchgate.net/profile/Giovanni-Messuti/publication/384770747_Uncertainty_estimation_via_ensembles_of_deep_learning_models_and_dropout_layers_for_seismic_traces/links/671a5754edbc012ea13d08bf/Uncertainty-estimation-via-ensembles-of-deep-learning-models-and-dropout-layers-for-seismic-traces.pdf), [P-wave]()) . For any questions gmessuti@unisa.it, oamoroso@unisa.it, sscarpetta@unisa.it.
 
 The folder 'dataset B test set (Mt. Pollino area)' contains two files. The first file contains the vertical components of the seismic waveforms used (hdf5 file), and the second file contains the metadata related to the specific waveform (csv).
 The waveforms are centered on P-phase arrivals, demeaned, and normalized, as explained in the paper.
