@@ -4,11 +4,13 @@ Repository related to the paper "CFM: a convolutional neural network for first-m
 The folder 'dataset B test set (Mt. Pollino area)' contains two files. The first file contains the vertical components of the seismic waveforms used (hdf5 file), and the second file contains the metadata related to the specific waveform (csv).
 The waveforms are centered on P-phase arrivals, demeaned, and normalized, as explained in the paper.
 
-The folder 'Network_CFM' contains the networks we trained (CFM and CFM_with_timeshift in two .hdf5 files), along with plots illustrating their respective accuracies and losses. Note: the training accuracy of the network with timeshift is lower due to the random shift applied to the training waveforms. Note: Despite the slightly lower accuracy, we suggest using the 'CFM_with_timeshift.hdf5' network, as it is more robust to minor inaccuracies in pickings.
+The folder 'Network_CFM' contains the networks we trained (CFM and CFM_with_timeshift in two .hdf5 files), along with plots illustrating their respective accuracies and losses. Note: The training accuracy of the network with timeshift is lower due to the random shift applied to the training waveforms. Note: Despite the slightly lower accuracy, we suggest using the 'CFM_with_timeshift.hdf5' network, as it is more robust to minor inaccuracies in pickings.
 
 The folder 'Test_data' contains some example waveforms along with a csv file where some arrivals are stored.
 
-The networks have been developed with Python 3.8 and TensorFlow version 2.9.1
+The folder 'CFM_ensemble' contains eight independent CFM models trained with timeshift, useful to build an ensemble approach, as suggested in [[1]](#1)
+
+All the networks have been developed with Python 3.8 and TensorFlow version 2.9.1
 
 
 If needed, the file 'CFM_env.yml' can be used to recreate the environment required for utilizing the network with the provided script ('predict.py')<br>
@@ -68,3 +70,9 @@ options:
                         Optional: Folder where to store the results. If not provided, a folder in the current path is
                         created
 ```
+
+## References
+<a id="1">[1]</a> 
+Dijkstra, E. W. (1968). 
+Go to statement considered harmful. 
+Communications of the ACM, 11(3), 147-148.
