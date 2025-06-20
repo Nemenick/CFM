@@ -1,5 +1,6 @@
 # CFM
-Repository related to the paper "CFM: a convolutional neural network for first-motion polarity classification of seismic records in volcanic and tectonic areas" and subsequest studyes ( [Uncertainty](https://www.researchgate.net/profile/Giovanni-Messuti/publication/384770747_Uncertainty_estimation_via_ensembles_of_deep_learning_models_and_dropout_layers_for_seismic_traces/links/671a5754edbc012ea13d08bf/Uncertainty-estimation-via-ensembles-of-deep-learning-models-and-dropout-layers-for-seismic-traces.pdf), [P-wave]()) . For any questions gmessuti@unisa.it, oamoroso@unisa.it, sscarpetta@unisa.it.
+Repository related to the paper "CFM: a convolutional neural network for first-motion polarity classification of seismic records in volcanic and tectonic areas" and subsequent studies ( [Uncertainty estimation via ensembles of deep learning 
+models and dropout layers for seismic traces]([https://www.researchgate.net/profile/Giovanni-Messuti/publication/384770747_Uncertainty_estimation_via_ensembles_of_deep_learning_models_and_dropout_layers_for_seismic_traces/links/671a5754edbc012ea13d08bf/Uncertainty-estimation-via-ensembles-of-deep-learning-models-and-dropout-layers-for-seismic-traces.pdf](https://link.springer.com/chapter/10.1007/978-981-96-0994-9_10)), [P-wave polarity determination via ensemble deep learning models](https://en.sif.it/journals/sif/ncc/econtents/2024/047/05/article/16)). For any questions, gmessuti@unisa.it, oamoroso@unisa.it, sscarpetta@unisa.it.
 
 The folder 'dataset B test set (Mt. Pollino area)' contains two files. The first file contains the vertical components of the seismic waveforms used (hdf5 file), and the second file contains the metadata related to the specific waveform (csv).
 The waveforms are centered on P-phase arrivals, demeaned, and normalized, as explained in the paper.
@@ -8,7 +9,7 @@ The folder 'Network_CFM' contains the networks we trained (CFM and CFM_with_time
 
 The folder 'Test_data' contains some example waveforms along with a csv file where some arrivals are stored.
 
-The networks have been developed with python 3.8 and tensorflow version 2.9.1
+The networks have been developed with Python 3.8 and TensorFlow version 2.9.1
 
 
 If needed, the file 'CFM_env.yml' can be used to recreate the environment required for utilizing the network with the provided script ('predict.py')<br>
@@ -17,7 +18,7 @@ To this end:
 ## 1. Set up the environment:
 - Install [miniconda](https://docs.conda.io/en/latest/miniconda.html)
 - Download the "CFM_env.yml" file
-- Install the "CFMenvironment" virtual environment (on command prompt):
+- Install the "CFMenvironment" virtual environment (on the command prompt):
 ```bash
 conda update -n base -c defaults conda
 conda config --append channels conda-forge
@@ -25,7 +26,7 @@ conda env create -f path../CFM_env.yml
 ```
 
 ## 2. Start to predict the polarities:
-- Activate the environment (on command prompt):
+- Activate the environment (on the command prompt):
 ```bash
 conda activate CFMenvironment
 ```
@@ -37,9 +38,9 @@ python predict.py --model=folder_model/CFM_with_timeshift.hdf5 --data=folder_dat
 
 
 Important Notes: <br>
-- The built-in script ('predict.py') currently supports the input-data formats: mseed, sac. The network and the data (of any custom format) can be also loaded through a custom script, with the data provided as a NumPy array.<br>
+- The built-in script ('predict.py') currently supports the input-data formats: mseed, sac. The network and the data (of any custom format) can also be loaded through a custom script, with the data provided as a NumPy array.<br>
 - The 'arrivals' optional argument should contain the path to the .csv file where information about the arrival times is stored. If the arrival time information of a trace is also stored in the SAC trace, this information is used, neglecting the info in the .csv file of arrivals.<br>
-- We recall the network can operate only on the vertical component.
+- We recall that the network can operate only on the vertical component.
 - The output of the "predict.py" script comprises two CSV files. One contains the IDs of waveforms that are deemed "not predictable" for certain reasons, while the other represents the predictions. Each trace ID is associated with a predicted value indicating upward polarity probability. To determine the acceptance of upward or downward polarity, a threshold needs to be set. While we initially recommend accepting upward polarities for predicted values above 0.925 and downward polarities for values below 0.075, we encourage users to experiment with the polarity acceptance thresholds to determine the best parameters for their specific application.
 
 Arguments:
