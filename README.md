@@ -43,7 +43,7 @@ Important Notes: <br>
 - The 'arrivals' optional argument should contain the path to the .csv file where information about the arrival times is stored. If the arrival time information of a trace is also stored in the SAC trace, this information is used, neglecting the info in the .csv file of arrivals.<br>
 - We recall that all the networks can operate only on vertical components.
 - The output of the "predict.py" script comprises two CSV files. One contains the IDs of waveforms that are deemed "not predictable" for certain reasons, while the other represents the predictions. Each trace ID is associated with a predicted value indicating upward polarity probability. To determine the acceptance of upward or downward polarity, a threshold needs to be set. While we initially recommend accepting upward polarities for predicted values above 0.925 and downward polarities for values below 0.075, we encourage users to experiment with the polarity acceptance thresholds to determine the best parameters for their specific application.
-- To operate with the ensemble model, use the 8 CFM networks provided in the 'CFM_ensemble' folder. Each network should be passed as an argument in a separate call to the predict.py script, which outputs the polarity probability. The ensemble prediction for each waveform is obtained by averaging the predictions from all networks in the ensemble. 
+- If you choose to use the ensemble model, 8 CFM (with timeshift) networks are provided in the 'CFM_ensemble' folder. Each network should be passed as an argument in a separate call to the predict.py script, which outputs the polarity probability. The ensemble prediction for each waveform is obtained by averaging the predictions from all networks in the ensemble. 
 
 Arguments:
 ```
