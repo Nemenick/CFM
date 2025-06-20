@@ -8,7 +8,7 @@ The folder 'Network_CFM' contains the networks we trained (CFM and CFM_with_time
 
 The folder 'Test_data' contains some example waveforms along with a csv file where some arrivals are stored.
 
-The folder 'CFM_ensemble' contains eight independent CFM models trained with timeshift, useful to build an ensemble approach, as suggested in [[2]](#2), [[3]](#3).
+The folder 'CFM_ensemble' contains eight independent CFM models trained with timeshift, useful to build an ensemble approach, as presented in [[2]](#2), [[3]](#3).
 
 All the networks have been developed with Python 3.8 and TensorFlow version 2.9.1
 
